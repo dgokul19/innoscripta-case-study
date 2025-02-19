@@ -1,0 +1,266 @@
+.homeContainer {
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--light-grey);
+}
+
+// Container Component
+.containerLayout{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+// Top Bar
+.topbarSection{
+    flex: 1;
+    height: 50px;
+    border-bottom: 5px solid var(--color-one);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+    .logo{
+        text-transform: capitalize;
+    }
+    button {
+        padding: 7px 16px;
+        border: none;
+        background-color: var(--color-one);
+        color: var(--white);
+        border-radius: 4px;
+    }
+}
+// Title CSS for content
+.titleContent{
+    height: 36px;
+    background: var(--white);
+    margin: 10px  0px;
+    line-height: 36px;
+    padding: 0 15px;
+    color: var(--color-one);
+}
+
+// NavigationMenu
+.filterContainer{
+    flex: 1;
+    height: 90px;
+    background-color: var(--white);
+    display: flex;
+    gap: 1rem;
+    color: var(--black);
+    padding: 10px 10px 0;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    box-shadow: 0px 2px 2px rgba(0,0,0,.2);
+    position: relative;
+    .filterContent{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3px;
+        font-size: .85rem;
+        .searchField{
+            display: flex;
+            button {
+                height: 36px;
+                width: 36px;
+                border: none;
+                color: var(--white);
+                background-color: var(--darker-grey);
+                border-radius: 0 4px 4px 0;
+                cursor: pointer;
+            }
+        }
+        input {
+            width: 70%;
+            height: 36px;
+            border: 1px solid var(--darker-grey);
+            border-radius: 4px 0px 0 4px;
+            text-indent: 10px;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 8px;
+            li {
+                background-color: transparent;
+                border : 1px solid var(--darker-grey);
+                font-size: .85rem;
+                height: 36px;
+                line-height: 36px;
+                padding: 0 14px;
+                border-radius: 4px;
+                color: var(--darker-grey);
+                cursor: pointer;
+                transition: .01s linear all;
+                &.activeNav{
+                    background-color: var(--darker-grey);
+                    color: var(--white);
+                }
+            }
+        }
+        .categoryDropdown{
+            position: relative;
+            height: 36px;
+            border: 1px solid var(--darker-grey);
+            width: 250px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            &:hover {
+                .dropdownElement {
+                    display: block;
+                }
+            }
+            .dropdownElement{
+                width: 100%;
+                height: 200px;
+                background-color: var(--light-grey);
+                position: absolute;
+                top: 103%;
+                left:0;
+                border:1px solid var(--grey);
+                border-radius: 0px 0px 4px 4px; 
+                display: none;
+            }
+        }
+    }
+    .clearFilter{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        span {
+            font-size: .75rem;
+        }
+        i {
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-one);
+            display: grid;
+            place-items: center;
+            color: var(--white);
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    }
+}
+
+// ContentLayout
+.contentSection{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color:var(--white);
+    box-shadow: 0px 2px 2px rgba(0,0,0,.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;;
+    .newsContentBox{
+        width: 45%;
+        display: flex;
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+        box-shadow: 0px 2px 6px rgba(0,0,0,.2);
+        .contentText{
+            display: flex;
+            flex-direction: column;
+        }
+        .imageContent{
+            display: flex;
+            align-items: center;
+            img{
+                border: 1px solid var(--darker-grey);
+                height: 120px;
+                width: 200px;
+                object-fit: cover;
+            }
+        }
+        h4{
+            height: 50px;
+            font-size: 1rem;
+            overflow: hidden;
+        }
+        p{
+            height: 62px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: .85rem;
+        }
+        .infoContent{
+            display: flex;
+            justify-content: space-between;
+            & div {
+                display: flex;
+                flex-direction: column;
+                span {
+                    color: var(--black);
+                    &:last-child {
+                        font-weight: 500;
+                        color: var(--darker-grey);
+                    }
+                }
+            }
+            font-size: .85rem;
+        }
+        
+    }
+}
+// Loading Screen
+.loadingContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    img {
+        width : 60px;
+        height: auto;
+    }
+}
+
+
+
+// Mobile Responsive CSS Querys
+
+@media only screen and (max-width: 920px) {
+    .contentSection{
+        .newsContentBox {
+            width: 100%;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .filterContainer {
+        flex-wrap: wrap;
+        height: auto;
+        padding-bottom: 10px;
+        .filterContent {
+            width: 50%;
+            flex: auto;
+        }
+    }
+}
+@media only screen and (max-width: 480px) {
+    .contentSection{
+        .newsContentBox {
+            width: 100%;
+            flex-direction: column;
+            .imageContent{
+                justify-content: center;
+            }
+        }
+    }
+}
