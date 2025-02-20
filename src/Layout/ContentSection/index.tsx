@@ -3,6 +3,7 @@ import * as React from 'react';
 // Components
 import NewsContent from '../../Components/NewsContent/';
 import LoadingScreen from '../../Components/Common/Loading';
+import CategoryFilter from '../../Components/CategoryFilter';
 
 // Utils
 import { SOURCE_TYPES } from '../../Constants';
@@ -40,7 +41,7 @@ const ContentSection: React.FunctionComponent<{}> = () => {
   
   return (
     <>
-      <h4 className={classes.titleContent}>News Section:</h4>
+      <CategoryFilter />
       <div className={classes.contentSection}>
         {renderContentInfo()}
       </div>
@@ -49,3 +50,4 @@ const ContentSection: React.FunctionComponent<{}> = () => {
 };
 
 export default ContentSection;
+{/*  */}

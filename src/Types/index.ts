@@ -2,7 +2,7 @@
 
 export type SOURCE_TYPE = 'NEWS_API' | 'GUARDIAN' | 'NEWYORK_TIMES';
 
-export type MainNewsType = NewsArticleType | GuardianArticleType | NewYorkTimesArticleType | undefined;
+export type MainNewsType = NewsArticleType | GuardianArticleType | NewYorkTimesArticleType;
 
 export interface NewsAPiTypeResponse {
     status : string,

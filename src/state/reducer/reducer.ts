@@ -44,8 +44,6 @@ export function newsReducer(state: InitialStateType, action: Actions) {
           ...action.payload,
           isLoading : false
         };
-  
-  
       default:
         return state;
     }

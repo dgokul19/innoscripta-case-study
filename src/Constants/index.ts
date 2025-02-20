@@ -12,3 +12,5 @@ export const FILTER_LABELS:SourceStringType = {
     GUARDIAN : 'Guardian',
     NEWYORK_TIMES : 'New York Times'
 };
+
+export const CATEGORY_TAGS: string[] = ['business','entertainment', 'general','health', 'science','sports', 'technology'];
