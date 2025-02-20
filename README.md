@@ -6,6 +6,8 @@ Features covered:
 - Implemented Search and Filtering option for news articles.
 - Implemented category filters for news articles and defaults to all.
 
+- (*Note: Due to security reason, news data source APIKeys has been removed here, and Added dummy keys, Please make sure to use the respective api keys for working prototype*)
+
 ## Prerequistes
 Before installing the App, ensure that your system meets the following requirements:
 
