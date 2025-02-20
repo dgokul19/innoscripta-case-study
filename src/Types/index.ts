@@ -54,7 +54,8 @@ export type NewYorkTimesArticleType = {
 }
 
 export type InitialStateType = {
-    isLoading : Boolean
+    isLoading : Boolean,
+    isError : Boolean,
     searchKey : string
     searchByDate : string
     selectedSource : string

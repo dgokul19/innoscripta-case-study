@@ -16,11 +16,18 @@ import classes from "../../Css/index.module.scss";
 
 const ContentSection: React.FunctionComponent<{}> = () => {
 
-  const { state : { isLoading, selectedSource,  NEWS_API, GUARDIAN, NEWYORK_TIMES } } = React.useContext(AppContext);
+  const { state : { isLoading, isError, selectedSource,  NEWS_API, GUARDIAN, NEWYORK_TIMES } } = React.useContext(AppContext);
 
+  console.log({isError});
   const renderContentInfo = () =>{
     if(isLoading){
       return <LoadingScreen />;
+    } else if(isError){
+        return (
+          <div className={classes.errorInfo}>
+            Data Not Found !!
+          </div>
+        )
     } else {
         let data;
         switch(selectedSource){
@@ -33,7 +40,6 @@ const ContentSection: React.FunctionComponent<{}> = () => {
             data = NEWS_API;
             break;
         }
-
         return data?.map((news:any, idx:number) => <NewsContent key={idx} content={news}/>);
 
     }

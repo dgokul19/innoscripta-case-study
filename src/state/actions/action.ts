@@ -7,8 +7,13 @@ export enum ActionTypes {
     SET_ERROR = "SET_ERROR",
     UPDATE_SORCE_TYPE = "UPDATE_SORCE_TYPE",
     UPDATE_FILTER_SEARCH = "UPDATE_FILTER_SEARCH",
-    CLEAR_FILTER = "CLEAR_FILTER"
+    CLEAR_FILTER = "CLEAR_FILTER",
+    FETCH_DATA_FAILED = "FETCH_DATA_FAILED"
 }
+
+export type ErrorFetchingApiAction = {
+    type: ActionTypes.FETCH_DATA_FAILED;
+};
 
 export type FetchingNewsAction = {
     type: ActionTypes.FETCHING_NEWS;
@@ -39,4 +44,5 @@ export type Actions =
   | SetNewsDataAction
   | UpdateNewsSourceType
   | UpdateSearchFilter
+  | ErrorFetchingApiAction
   | ClearFilterProps;

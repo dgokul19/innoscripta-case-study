@@ -190,7 +190,7 @@
 // ContentLayout
 .contentSection{
     width: 100%;
-    height: auto;
+    min-height: 300px;
     box-sizing: border-box;
     padding: 10px;
     box-sizing: border-box;
@@ -266,6 +266,14 @@
         width : 60px;
         height: auto;
     }
+}
+.errorInfo{
+    height: 40px;
+    width: 320px;
+    display: grid;
+    place-items: center;
+    color: var(--color-one);
+    border-radius: 4px;
 }
 
 

@@ -4,6 +4,7 @@ import { ActionTypes, Actions } from '../actions/action';
 
 export const initialState: InitialStateType =  {
     isLoading : false,
+    isError : false,
     searchKey : '',
     searchByDate : '',
     selectedSource : SOURCE_TYPES.NEWS_API,
@@ -36,6 +37,13 @@ export function newsReducer(state: InitialStateType, action: Actions) {
           ...state,
           searchKey: action.payload.searchKey,
           searchByDate: action.payload.searchByDate,
+        };
+      
+        case ActionTypes.FETCH_DATA_FAILED:
+        return {
+          ...state,
+          isError: true,
+          isLoading: false,
         };
   
       case ActionTypes.SET_NEWS_DATA:

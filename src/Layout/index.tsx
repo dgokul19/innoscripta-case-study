@@ -8,10 +8,10 @@ import ContentSection from './ContentSection';
 
 // Utils
 import { AppContext } from '../state/context/context';
-import { 
-  fetchGuardianApiContent, 
-  fetchNewsApiContent, 
-  fetchNewYorkTimesContent 
+import {
+  fetchGuardianApiContent,
+  fetchNewsApiContent,
+  fetchNewYorkTimesContent
 } from '../api/apihelper';
 
 import { ActionTypes } from '../state/actions/action';
@@ -23,32 +23,35 @@ import classes from "../Css/index.module.scss";
 
 
 
-export default function HomeLayout () {
-  const { state : { selectedSource, searchByDate, searchKey }, dispatch } = useContext(AppContext);
+export default function HomeLayout() {
+  const { state: { selectedSource, searchByDate, searchKey }, dispatch } = useContext(AppContext);
 
   const fetchContent = async () => {
-    dispatch({type : ActionTypes.FETCHING_NEWS});
-    let data:any;  
-    
-    let keyProp = {
-      searchKey,
-      searchByDate
-    };
+    dispatch({ type: ActionTypes.FETCHING_NEWS });
+    let data: any;
+    try {
+      let keyProp = {
+        searchKey,
+        searchByDate
+      };
 
-    switch(selectedSource){
-        case SOURCE_TYPES.GUARDIAN:  
+      switch (selectedSource) {
+        case SOURCE_TYPES.GUARDIAN:
           data = await fetchGuardianApiContent(keyProp);
           break
-        case SOURCE_TYPES.NEWYORK_TIMES:  
+        case SOURCE_TYPES.NEWYORK_TIMES:
           data = await fetchNewYorkTimesContent(keyProp);
           break;
         default:
-        case SOURCE_TYPES.NEWS_API:  
+        case SOURCE_TYPES.NEWS_API:
           data = await fetchNewsApiContent(keyProp);
           break;
       }
-      dispatch({type : ActionTypes.SET_NEWS_DATA, payload : data});
+      dispatch({ type: ActionTypes.SET_NEWS_DATA, payload: data });
+    } catch(ex){
+      dispatch({ type : ActionTypes.FETCH_DATA_FAILED })
     }
+  }
 
   useEffect(() => {
     fetchContent();
@@ -56,11 +59,11 @@ export default function HomeLayout () {
 
   return (
     <div className={classes.homeContainer}>
-       <Container>
-            <TopSectionBar />
-            <NewsNavigator />
-            <ContentSection />
-        </Container> 
+      <Container>
+        <TopSectionBar />
+        <NewsNavigator />
+        <ContentSection />
+      </Container>
     </div>
   );
 }
