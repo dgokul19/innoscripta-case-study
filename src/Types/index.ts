@@ -69,7 +69,7 @@ export type FilterProps = {
 };
 
 export const _KEYS = {
-    NEWS_API_KEY : 'c829b43aa4924b5aa601c626ebc7d3e2',
-    GUARDIAN_API_KEY : 'fd4be056-120d-4b47-b50e-66916b80210b',
-    NEWYORK_TIMES_API_KEY : 'aEUlGMUxQV8AsY3YS15ASMsasspFWpRA'
+    NEWS_API_KEY : 'aBc-829b43aa4924b5a-c43ac-a601c626ebc7d3e2-345',    // Dummy Keys
+    GUARDIAN_API_KEY : 'i2re-fd4be056-120d-c43ac-4b47-b50e-66916b80210b-3u495',// Dummy Keys
+    NEWYORK_TIMES_API_KEY : '7989-aEUlGMUxQV8AsY3Y-c43ac-S15ASMsasspFWpRA-56asadd91',// Dummy Keys
 }
