@@ -1,50 +1,77 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# News Case Study Application
 
-Currently, two official plugins are available:
+Features covered:
+- User interface for a news aggregator website that pulls articles from various sources ( NewsApi.org, Guardian, NewYorkTimes ) and displays news content.
+- Implemented Search and Filtering option for news articles.
+- Implemented category filters for news articles and defaults to all.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequistes
+Before installing the App, ensure that your system meets the following requirements:
 
-## Expanding the ESLint configuration
+- Node.js (v14 or later)
+- npm  
+- Git
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Follow these steps to install the App.
+
+Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/dgokul19/innoscripta-case-study.git
+```
+Alternatively, you can download the zip file from the repository and extract it to your local machine.
+
+Step 2: Install Dependencies
+
+Once you have the project files, open a terminal/command prompt and navigate to the project directory. Run the following command to install all required dependencies:
+
+```bash
+    npm install
+```
+This will install the necessary libraries and packages specified in the package.json file.
+
+
+Step 3: Run Application
+
+Once all the dependencies has been installed,  Run the following command in terminal under same directory.
+
+```bash
+    npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+This will run the application in your local machine:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+visit **http://localhost:5173/**
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Tech Stack
+
+**Client:** React, Sass, Typescript
+
+
+## Deployment
+
+open a terminal/command prompt and navigate to the project directory. Run the following command to build a docker image:
+
+```bash
+    docker build -t <image-name> .
+
+    (e.g) docker build -t case-study-app .
+```
+
+It will take some time to execute the all the commands in Dockerfile. once all docker image has been created. you can verify that, using the command 
+
+```
+    docker images
+```
+you can see the *case-study-app* name in images list.
+
+Next you can run the application in docker using, the following command
+
+```
+    docker run -p 5173:5173 <image-name>
+
 ```
